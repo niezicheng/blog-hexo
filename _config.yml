@@ -3,24 +3,23 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Hexo
-subtitle: ''
-description: ''
-keywords:
-author: John Doe
-language: en
-timezone: ''
+title: Arvinjunの站点
+subtitle: 心中有光，何惧路长；志存高远，方能行远自迩
+description: 心中有光，何惧路长；志存高远，方能行远自迩
+keywords: hexo,butterfly,arvinjun,blog,hexo-butterfly,hexo-theme-butterfly
+author: Arvinjun
+language: zh-CN
+timezone: Asia/Shanghai
 
 # URL
 ## Set your site url here. For example, if you use GitHub Page, set url as 'https://username.github.io/project'
-url: https://arvinjun.js.org
-root: /
-# permalink: :year/:month/:day/:title/
-permalink: posts/:abbrlink/
+url: https://github.com/niezicheng/blog-hexo
+root: /blog-hexo
+permalink: :year/:month/:day/:title/
 permalink_defaults:
 pretty_urls:
-  trailing_index: true # Set to false to remove trailing 'index.html' from permalinks
-  trailing_html: true # Set to false to remove trailing '.html' from permalinks
+  trailing_index: false # Set to false to remove trailing 'index.html' from permalinks
+  trailing_html: false # Set to false to remove trailing '.html' from permalinks
 
 # Directory
 source_dir: source
