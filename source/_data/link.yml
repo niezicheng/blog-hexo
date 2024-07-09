@@ -1,12 +1,12 @@
-# - class_name: 友情链接
-#   class_desc: 那些人，那些事
-#   link_list:
-#     - name: Hexo
-#       link: https://hexo.io/zh-tw/
-#       avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
-#       descr: 快速、简单且强大的网志框架
+- class_name: 友情链接
+  class_desc: 那些人，那些事...
+  link_list:
+    - name: Arvinjun
+      link: https://niezicheng.github.io/
+      avatar: https://avatars.githubusercontent.com/u/48236720?s=400&u=bdce783b4cef8916cf5732b0d5f249c573ad6b69&v=4
+      descr: 清香的 orange
 
-- class_name: 网站
+- class_name: 技术网站
   class_desc: 值得推荐的技术网站
   link_list:
     - name: Baidu
@@ -25,3 +25,19 @@
       link: http://kernel.meizu.com/
       avatar: https://iguopin-company.oss-cn-beijing.aliyuncs.com/10685381697545945/logo/20230518/0f9816023f1324fa87d6151772b62bf1.png
       descr: 奇虎 360
+
+- class_name: 设计体验网站
+  class_desc: 值得推荐的设计体验网站
+  link_list:
+    - name: Baidu
+      link: http://meux.baidu.com/
+      avatar: https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/pmp/attachments/file-879ff578-0fb9-4def-a471-1108ee080349.jpeg
+      descr: 百度 MEUX
+    - name: Tencent
+      link: https://isux.tencent.com/
+      avatar: https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/pmp/attachments/file-7eeb2b58-4528-488c-896a-5841653b0ec2.jpeg
+      descr: 腾讯 ISUX
+    - name: JD
+      link: https://jelly.jd.com/
+      avatar: https://terminus-paas.oss-cn-hangzhou.aliyuncs.com/pmp/attachments/file-286e5897-dc0b-457f-912a-dadf26c814ee.jpeg
+      descr: 京东 JELLY
