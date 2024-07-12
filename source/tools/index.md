@@ -23,15 +23,21 @@ date: 2024-07-08 16:39:42
 - [Carbon](https://carbon.now.sh/) - 一个代码生成图片的工具，可以将代码生成图片，方便分享到社交平台。
 - [ray.so](https://ray.so/) - 一个代码生成图片的工具，可以将代码生成图片，支持多种主题和语言。
 
-### 视频 & 图片转换
+### 视频·图片转换
 
 - [ezgif](https://ezgif.com/) - 一个视频图片转换工具，可以将视频转换为图片，也可以将图片转换为视频。
 - [gifrun](https://gifrun.com/) - 一个在线 GIF 图片编辑工具，可以对 GIF 图片进行编辑，添加文字、裁剪、压缩等操作。
 
-### 无背景图片资源
+### 无背景图片·资源
 
 - [pngdirs](https://www.pngdirs.com/) - 一个无背景图片资源库，可以查看各种无背景图片，方便使用。
 - [remove.bg](https://www.remove.bg/) - 一个在线去除图片背景的工具，可以将图片背景去除，生成无背景图片。
+
+### 本地图片·在线链接
+
+- [sm.ms](https://sm.ms/) - 一个免费的图片上传服务，可以上传本地图片，获取图片在线链接，永久保存图片。
+- [imgbb](https://imgbb.com/) - 一个免费的图片上传服务，可以上传本地图片，获取图片在线链接，永久保存图片。
+- [picgo](https://picgo.github.io/PicGo-Doc/zh/guide/) - 一个开源的图片上传工具，可以上传本地图片，获取图片在线链接，支持多种图床。
 
 ## 数据格式化
 
@@ -49,12 +55,12 @@ date: 2024-07-08 16:39:42
 
 - [css3-animation](https://www.webhek.com/post/css3-animation-sniplet-collection/#/) - 一个 css3 动画代码片段集合，并且包含片段代码，直接 cv 就可以了
 
-### 动效交互组件-uiverse
+### 动效·交互组件·uiverse
 
 - [uiverse](https://uiverse.io/) - 一个动效交互组件库，可以查看各种动效交互组件，方便使用。
 
 ## 模板
 
-### 封面模板-canva
+### 封面模板·canva
 
 - [canva](https://www.canva.cn/) - 一个封面模板库，可以查看各种封面模板，方便使用。

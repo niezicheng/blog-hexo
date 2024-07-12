@@ -1,5 +1,5 @@
 ---
-title: Hexo 及 Butterfly 主题安装
+title: Hexo 及 Butterfly 主题安装、部署
 tags:
   - 教程
   - 主题
@@ -9,9 +9,23 @@ abbrlink: 380b088c
 date: 2024-07-09 11:06:00
 ---
 
+## 前言
+
+最近稍微有点时间，想着重新搭建下自己的个人站点。经过一番对比，最终选择了静态博客框架 `Hexo` + `Butterfly` 主题。
+
+**那么为什么选择 Hexo 且选择 Butterfly 主题呢？**
+
+- `Hexo` 是一个快速、简洁且高效的博客框架，基于 `Node.js` 开发，支持 `Markdown` 编写文章，支持主题和插件扩展，可以**快速搭建**一个博客网站。
+- `Butterfly` 主题是一个简洁、优雅的主题，支持多种配置，支持多种插件，支持多种功能，适合个人站点使用。
+- `Hexo` 的社区活跃，不仅有很多优秀的主题和插件可供选择，而且在此基础上还可以满足更多的个性化需求。
+
+{% note info %}
+预览地址：[Arvinjun の站点](https://niezicheng.github.io/blog-hexo/)
+{% endnote %}
+
 ## 介绍
 
-[Hexo](https://hexo.io/) 是一个快速、简洁且高效的博客框架，基于 [Node.js](https://nodejs.org/) 开发，支持 [Markdown](https://daringfireball.net/projects/markdown/) 编写文章，支持主题和插件扩展，可以快速搭建一个博客网站。本文主要介绍 `Hexo` 的安装和 [Butterfly](https://butterfly.js.org/) 主题的使用。
+[Hexo](https://hexo.io/) 是一个快速、简洁且高效的博客框架，基于 [Node.js](https://nodejs.org/) 开发，支持 [Markdown](https://daringfireball.net/projects/markdown/) 编写文章，支持主题和插件扩展，可以快速搭建一个博客网站。本文主要介绍 `Hexo` 和 [Butterfly](https://butterfly.js.org/) 主题的搭建和部署。
 
 ## 安装 Hexo 及 Butterfly 主题
 
@@ -31,7 +45,7 @@ cd blog-hexo
 npm i
 ```
 
-![image-20240709112207310](https://tinypng.com/backend/opt/download/n5dkvd1j9jn595x808mz6d8gjnm6x28t)
+![image-20240709112207310.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/ea3aafad18344220b0e2b8391ec01d33~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720839090&x-orig-sign=QIsChWnOXBwcfLQuqUm%2BV0mRt8E%3D)
 
 ### 安装 Butterfly 主题
 
@@ -81,4 +95,56 @@ npm install hexo-renderer-pug hexo-renderer-stylus --save
 hexo server
 ```
 
-打开浏览器访问 `http://localhost:4000` 即可查看 `Hexo` 博客网站。
+打开浏览器访问 `http://localhost:4000/` 即可查看 `Hexo` 博客网站。
+
+## 部署 Hexo 项目
+
+笔者这边仍是通过 `GitHub Pages` 部署 `Hexo` 项目，运行部署命令前，建议先简单了解下我的另一篇文章 [Github Actions 自动化部署](https://juejin.cn/post/7311907901047160882)。
+
+### 配置部署
+
+在 `Hexo` 项目根目录下的 `_config.yml` 文件中配置 `deploy` 部署信息：
+
+```yml
+# 线上访问的站点地址
+url: # 线上访问的站点域名地址
+root: /blog-hexo # 站点根目录路径
+
+# 部署配置
+deploy:
+  type: git
+  repo: # 你的仓库地址
+  branch: gh-pages # 你需要部署分支
+```
+
+{% note warning %}
+
+我部署的站点根目录路径为 `/blog-hexo`，所以上面 root 设置为 `//blog-hexo`。如果设置了根路径，那么在项目中资源引用也应添加该根路径前缀，否则可能无法正常访问资源。
+
+{% endnote %}
+
+### 执行部署
+
+1. 创建你的部署分支，笔者这边是 `gh-pages` 分支，执行下面命令：
+
+```zsh
+git checkout -b gh-pages
+```
+
+2. 在 `Github` 仓库设置中将 `gh-pages` 分支设置为 `GitHub Pages` 的源。如下图所示：
+
+![image-20240712100751477.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/b0018dfc0573481c81a6f4fdd924eac5~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720839286&x-orig-sign=UIPhPNIcpYDybI1pmVopuD0cQig%3D)
+
+3. 在 `Hexo` 项目根目录执行下面命令部署 `Hexo` 项目：
+
+```zsh
+hexo deploy
+```
+
+4. 对应 `Action` 下 `page-build-deployment` 任务部署成功后，打开浏览器访问 `https://<username>.github.io/<repository>/` 即可查看 `Hexo` 博客网站。 如下图所示：
+
+![image-20240712105802028.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/e3d16135a961418399d7d0cfde18f6ba~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720839516&x-orig-sign=yisr1QXhNyImL8iQwUboLBsnPAg%3D)
+
+## 结语
+
+至此，`Hexo` 及 `Butterfly` 主题安装、部署完成。如果你有更好的建议或者更好的主题推荐，欢迎留言交流。
