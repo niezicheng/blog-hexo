@@ -617,7 +617,7 @@ theme_color:
   paginator: "#ec4c8c"
   button_hover: "#ec4c8c"
   text_selection: "#ec4c8c"
-  link_color: "#99a9bf"
+  link_color: "#63a1ef"
   meta_color: "#858585"
   hr_color: "#a4d8fa"
   code_foreground: "#f47466"
