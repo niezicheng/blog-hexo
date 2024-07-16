@@ -39,7 +39,7 @@ social:
   fab fa-github: https://github.com/niezicheng/blog-hexo || Github || '#febcd5'
   fas fa-square-rss: https://juejin.cn/user/2946346894759319/posts || Blog || '#febcd5'
   fas fa-crow: https://www.yuque.com/niezicheng || YuQue || '#febcd5'
-  fas fa-envelope: zichengnie1212@gmail.com || Email || '#febcd5'
+  fas fa-envelope: mailto:zichengnie1212@gmail.com || Email || '#febcd5'
 
 # Image (圖片設置)
 # --------------------------------------
@@ -852,14 +852,14 @@ note:
 # It may contain bugs and unstable, give feedback when you find the bugs.
 # https://github.com/MoOx/pjax
 pjax:
-  enable: false
+  enable: true
   exclude:
     # - xxxx
     # - xxxx
 
 # Inject the css and script (aplayer/meting)
 aplayerInject:
-  enable: false
+  enable: true
   per_page: true
 
 # Snackbar (Toast Notification 彈窗)
@@ -925,9 +925,22 @@ inject:
     - <link rel="stylesheet" href="/blog-hexo/css/entry.css">
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
-    # - <script src="xxxx"></script>
-    - <script src="/blog-hexo/js/entry.js"></script>
+    # 下雪背景
+    # - <canvas id="snow-canvas"></canvas>
+    # - <script src="/blog-hexo/js/snowing-background.js"></script>
+
+    # 鼠标滑动星星特效
+    - <canvas id="star-canvas"></canvas>
+    - <script src="/blog-hexo/js/star-canvas.js"></script>
+
+    # 樱花飘落效果
+    # - <script async src="https://npm.elemecdn.com/tzy-blog/lib/js/other/sakura.js"></script>
+
+    # 看板娘(随机)
     # - <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
+
+    # 全局吸底 APlayer
+    - <div class="aplayer no-destroy" data-id="7427714271" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-lrctype="1" data-preload="none" data-autoplay="true" muted></div>
 
 # CDN
 # Don't modify the following settings unless you know how they work
