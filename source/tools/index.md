@@ -68,3 +68,9 @@ date: 2024-07-08 16:39:42
 ## 网站工具集
 
 [神器集](https://hao.logosc.cn/) - 一个网站工具集，可以查看各种网站工具，方便使用。
+
+## 字体·图标库
+
+- [Google Fonts](https://fonts.google.com/) - 一个免费开源在线字体库，可以查看各种字体，方便使用。
+- [Font Awesome](https://fontawesome.com/) - 一个免费开源图标字体库，可以查看各种图标字体，方便使用。
+- [iconfont](https://www.iconfont.cn/) - 一个阿里巴巴图标库，可以查看各种图标字体，方便使用。

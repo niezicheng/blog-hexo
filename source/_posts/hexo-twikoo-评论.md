@@ -1,5 +1,5 @@
 ---
-title: hexo-twikoo-评论
+title: Hexo Twikoo 评论功能
 tags:
   - 教程
   - Hexo
@@ -106,23 +106,23 @@ comments:
 
 1. 申请 [MongoDB](https://www.mongodb.com/cloud/atlas/register) 账号，如下图所示：
 
-![image-20240712141737041.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/c60aad7b898c4002b42e2e5cd6aa463b~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854277&x-orig-sign=WkTGp3LsbDUE0iko%2B4khXuRlopc%3D)
+![image-20240712141737041.webp](https://niezicheng.github.io/files/images/hexo/image-20240712141737041.webp)
 
-2. 项目创建，如下图所示：
+1. 项目创建，如下图所示：
 
-![image-20240711143753137.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/2d68ab51d7f14d7f94e182f2c1852274~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854321&x-orig-sign=cj%2B7kVuvW6gEBJ7VArb6VLI4CDI%3D)
+![image-20240711143753137.webp](https://niezicheng.github.io/files/images/hexo/image-20240711143753137.webp)
 
-![image-20240711143912702.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/f995581f655f4ef59ccc715e616dedae~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854430&x-orig-sign=iIpygu02qYTXQxio9soAXAZmuh0%3D)
+![image-20240711143912702.webp](https://niezicheng.github.io/files/images/hexo/image-20240711143912702.webp)
 
 1. 下图左上角选择项目，然后新建**免费集群**，区域推荐选择 `AWS / N. Virginia (us-east-1)`，如下图所示：
 
-![image-20240711144139906.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/4827b1e9e50e4207b3a5667ba2b7fb7d~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854430&x-orig-sign=pR5ECQtgtQjvvGEIr2erluRR7%2B4%3D)
+![image-20240711144139906.webp](https://niezicheng.github.io/files/images/hexo/image-20240711144139906.webp)
 
-![image-20240712152112679.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/9c7ee98fca34438aaec91cc95241d6e3~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720856758&x-orig-sign=zxv19UYT%2FxQsOBy3pIQvBaqg4wM%3D)
+![image-20240712152112679.webp](https://niezicheng.github.io/files/images/hexo/image-20240712152112679.webp)
 
 4. 点击 `Create Deployment`，配置连接集群信息，如下图所示：
 
-![image-20240712152353692.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/d8f68c4750294c5ea8f374feab93b2f0~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720856758&x-orig-sign=kPA8EiJqfz5LaUuLnCTKIgTdXqc%3D)
+![image-20240712152353692.webp](https://niezicheng.github.io/files/images/hexo/image-20240712152353692.webp)
 
 {% tabs connection %}
 
@@ -130,14 +130,15 @@ comments:
 
 点击 `Network Access` 链接更改并设置允许所有 `IP（0.0.0.0/0）`地址的连接，如下图所示：
 
-![image-20240711150010538.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/124bc6b9825846cf9fd043cfb7af7869~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854631&x-orig-sign=uuOVUoBDvW2g9UlrKX%2FLf2ggiJo%3D)
+![image-20240711150010538.webp](https://niezicheng.github.io/files/images/hexo/image-20240711150010538.webp)
 
 <!-- endtab -->
 
 <!-- tab 数据库权限 -->
 
 创建集群的数据库用户，设置用户名和密码【密码需记住，后面需要】，**切记**：填写用户信息后，点击下面的 `Create Database User` 按钮添加用户，如下图所示：
-![image-20240712152526257.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/e9358452d4bb4843906589b0e9a5eb43~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720856758&x-orig-sign=%2FIUd2JPsgElbAjxyyafo5nRxxhE%3D)
+
+![image-20240712152526257.webp](https://niezicheng.github.io/files/images/hexo/image-20240712152526257.webp)
 
 <!-- endtab -->
 
@@ -145,7 +146,7 @@ comments:
 
 点击 `Choose a connection method`，选择 `Drivers` 连接方式，如下图所示：
 
-![image-20240712150311568.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/0797ef4c9dbe40678cc6ba77e5979378~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720855083&x-orig-sign=P0nYVJl64AOkkiMYJWGwwls4zrE%3D)
+![image-20240712150311568.webp](https://niezicheng.github.io/files/images/hexo/image-20240712150311568.webp)
 
 <!-- endtab -->
 
@@ -153,7 +154,7 @@ comments:
 
 复制并保留你的连接字符串，后续 `Vercel` 部署环境变量需要使用，如下图所示：
 
-![image-20240712143337833.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/1576077cf383472fb0706d2aad1c18c4~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854642&x-orig-sign=jXnLkeJlyfEmADKIAqSbRRlmDeM%3D)
+![image-20240712143337833.webp](https://niezicheng.github.io/files/images/hexo/image-20240712143337833.webp)
 
 <!-- endtab -->
 
@@ -169,23 +170,23 @@ comments:
 1. 申请 [Vercel](https://vercel.com/signup) 账号，可以选择 `Github` 账号来同步
 2. 点击 [此链接](https://vercel.com/import/project?template=https://github.com/imaegoo/twikoo/tree/main/src/server/vercel-min) 将 `Twikoo` 一键部署到 `Vercel`，如下图所示：
 
-![image-20240711150407170.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/6f9722dfd2f64904b5ed53de7c669c5f~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854660&x-orig-sign=dktWAQEittw7Pd88q9YXx451tNg%3D)
+![image-20240711150407170.webp](https://niezicheng.github.io/files/images/hexo/image-20240711150407170.webp)
 
 3. 点击 `Create`，等待 `Deploy` 完成，如下图所示：
 
-![image-20240711150515700.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/b9628d8d5653421ca92459b4540baa6d~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854660&x-orig-sign=xCiVdnmHcnjLVSBzObPkPBAPc9s%3D)
+![image-20240711150515700.webp](https://niezicheng.github.io/files/images/hexo/image-20240711150515700.webp)
 
 1. 进入 `Settings` -> `Environment Variables`，添加环境变量 `MONGODB_URI`，值为上面 `MongoDB` 配置步骤 4 连接字符串处保留的信息【注意将字符串中用户密码替换】，配置完成后点击 `Save`，如下图所示：
 
-![image-20240712144918073.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/febf851941a54150acdd64f61afd44b5~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854649&x-orig-sign=soYkOG4jR683F7Z3TCjOm1X4CTw%3D)
+![image-20240712144918073.webp](https://niezicheng.github.io/files/images/hexo/image-20240712144918073.webp)
 
 1. 进入 `Deployments`，然后在任意一项后面点击更多「三个点」，然后点击 `Redeploy` 重新部署，如下图所示：
 
-![image-20240711151453763.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/eefd46f1aee24af5b06156f994618dc5~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854660&x-orig-sign=jHg0B65y4sEVC63mJBbXxWCsTCs%3D)
+![image-20240711151453763.webp](https://niezicheng.github.io/files/images/hexo/image-20240711151453763.webp)
 
 `Vercel Domains`（包含 `https://` 前缀，例如 `https://xxx.vercel.app`）即为下面主题配置 `twikoo` 所需的环境 `envId`
 
-![image-20240711163943249.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/60b7bed091ee4b54ba001e9be7b510f8~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720854683&x-orig-sign=qOH1aTdW%2Ba7AbKV%2B35fgZg0uy%2Bk%3D)
+![image-20240711163943249.webp](https://niezicheng.github.io/files/images/hexo/image-20240711163943249.webp)
 
 6. 在项目主题配置文件 `_config.butterfly.yml` 中修改以下内容，将你的环境 `id` 填入对应位置
 

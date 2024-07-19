@@ -45,7 +45,7 @@ cd blog-hexo
 npm i
 ```
 
-![image-20240709112207310.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/ea3aafad18344220b0e2b8391ec01d33~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720839090&x-orig-sign=QIsChWnOXBwcfLQuqUm%2BV0mRt8E%3D)
+![image-20240709112207310.webp](https://niezicheng.github.io/files/images/hexo/image-20240709112207310.webp)
 
 ### 安装 Butterfly 主题
 
@@ -133,7 +133,7 @@ git checkout -b gh-pages
 
 2. 在 `Github` 仓库设置中将 `gh-pages` 分支设置为 `GitHub Pages` 的源。如下图所示：
 
-![image-20240712100751477.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/b0018dfc0573481c81a6f4fdd924eac5~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720839286&x-orig-sign=UIPhPNIcpYDybI1pmVopuD0cQig%3D)
+![image-20240712100751477.webp](https://niezicheng.github.io/files/images/hexo/image-20240712100751477.webp)
 
 3. 在 `Hexo` 项目根目录执行下面命令部署 `Hexo` 项目：
 
@@ -143,7 +143,7 @@ hexo deploy
 
 4. 对应 `Action` 下 `page-build-deployment` 任务部署成功后，打开浏览器访问 `https://<username>.github.io/<repository>/` 即可查看 `Hexo` 博客网站。 如下图所示：
 
-![image-20240712105802028.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/e3d16135a961418399d7d0cfde18f6ba~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720839516&x-orig-sign=yisr1QXhNyImL8iQwUboLBsnPAg%3D)
+![image-20240719105253201.webp](https://niezicheng.github.io/files/images/hexo/image-20240719105253201.webp)
 
 ## 结语
 

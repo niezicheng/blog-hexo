@@ -2,7 +2,7 @@
 
 这是我的个人站点，用于记录一些学习笔记和文章分享。预览地址：[Arvinjun の站点](https://niezicheng.github.io/blog-hexo/)
 
-![image.png](https://p0-xtjj-private.juejin.cn/tos-cn-i-73owjymdk6/055d7dec7689428983e0da04550d83e7~tplv-73owjymdk6-watermark.image?policy=eyJ2bSI6MywidWlkIjoiMjk0NjM0Njg5NDc1OTMxOSJ9&rk3s=e9ecf3d6&x-orig-authkey=f32326d3454f2ac7e96d3d06cdbb035152127018&x-orig-expires=1720839286&x-orig-sign=bHPZ%2BOmmlxwp3wCZoVXDDiPT6b0%3D)
+![home-page.webp](https://niezicheng.github.io/files/images/cover/home-page.webp)
 
 ## 项目
 

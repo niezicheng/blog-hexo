@@ -16,7 +16,7 @@ menu:
     分类: /categories/ || fas fa-folder-open
   娱乐 || fa fa-heartbeat:
     音乐: /music/ || fas fa-music
-    照片: /Gallery/ || fas fa-images
+    图库: /gallery/ || fas fa-images
     电影: /movies/ || fas fa-video
   友链: /link/ || fas fa-link
   工具: /tools/ || fas fa-screwdriver-wrench
@@ -29,8 +29,8 @@ highlight_theme: mac light #  darker / pale night / light / ocean / mac / mac li
 highlight_copy: true # copy button
 highlight_lang: true # show the code language
 highlight_shrink: false # true: shrink the code blocks / false: expand the code blocks | none: expand code blocks and hide the button
-highlight_height_limit: false # unit: px
-code_word_wrap: false
+highlight_height_limit: 300 # unit: px
+code_word_wrap: true
 
 # Social Settings (社圈设置)
 formal:
@@ -93,7 +93,7 @@ cover:
   # When cover is not set, the default cover is displayed (當沒有設置cover時，默認的封面顯示)
   default_cover:
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
-    - /img/cover/one.webp
+    - /img/cover/default-cover.webp
 
 # Replace Broken Images (替换无法显示的图片)
 error_img:
@@ -145,7 +145,7 @@ copy:
   enable: true
   copyright:
     enable: true
-    limit_count: 50
+    limit_count: 30
 
 # Post
 # --------------------------------------
@@ -922,8 +922,8 @@ css_prefix: true
 # 插入代码到头部 </head> 之前 和 底部 </body> 之前
 inject:
   head:
-    - <link rel="stylesheet" href="/blog-hexo/css/entry.css">
-    # - <link rel="stylesheet" href="/xxx.css">
+    # 自定义覆盖样式
+    - <link rel="stylesheet" href="/blog-hexo/css/custom.css">
   bottom:
     # 下雪背景
     # - <canvas id="snow-canvas"></canvas>
@@ -940,7 +940,7 @@ inject:
     # - <script src="https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js"></script>
 
     # 全局吸底 APlayer
-    - <div class="aplayer no-destroy" data-id="7427714271" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-lrctype="1" data-preload="none" data-autoplay="true" muted></div>
+    - <div class="aplayer no-destroy" data-id="7427714271" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-lrctype="1" data-preload="none" data-autoplay="true" muted data-theme="#febcd5"></div>
 
 # CDN
 # Don't modify the following settings unless you know how they work
