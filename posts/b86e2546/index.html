@@ -1,0 +1,569 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>Hexo 进阶教程 | Arvinjunの站点</title><meta name="author" content="Arvinjun"><meta name="copyright" content="Arvinjun"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="音乐  官方教程：Butterfly 添加全局吸底 Aplayer 教程  全局吸底 Aplayer 预览效果  实现步骤 安装 Aplayer 插件 hexo-tag-aplayer  1npm install hexo-tag-aplayer --save  关闭 asset_inject，在项目根目录的 _config.yml 中添加配置如下：  由于需要全局都插入 aplayer 和 me">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Hexo 进阶教程">
+<meta property="og:url" content="https://github.com/niezicheng/blog-hexo/posts/b86e2546/">
+<meta property="og:site_name" content="Arvinjunの站点">
+<meta property="og:description" content="音乐  官方教程：Butterfly 添加全局吸底 Aplayer 教程  全局吸底 Aplayer 预览效果  实现步骤 安装 Aplayer 插件 hexo-tag-aplayer  1npm install hexo-tag-aplayer --save  关闭 asset_inject，在项目根目录的 _config.yml 中添加配置如下：  由于需要全局都插入 aplayer 和 me">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/niezicheng/blog-hexo/img/cover/default-cover.webp">
+<meta property="article:published_time" content="2024-07-17T03:11:48.000Z">
+<meta property="article:modified_time" content="2024-07-19T06:09:58.562Z">
+<meta property="article:author" content="Arvinjun">
+<meta property="article:tag" content="教程">
+<meta property="article:tag" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/niezicheng/blog-hexo/img/cover/default-cover.webp"><link rel="shortcut icon" href="/blog-hexo/img/logo.webp"><link rel="canonical" href="https://github.com/niezicheng/blog-hexo/posts/b86e2546/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//fonts.googleapis.com" crossorigin=""/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/blog-hexo/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web&amp;display=swap" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/blog-hexo/',
+  algolia: undefined,
+  localSearch: {"path":"/blog-hexo/search.xml","preload":false,"top_n_per_article":1,"unescape":true,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":300},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: true,
+    post: true
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":30,"languages":{"author":"作者: Arvinjun","link":"链接: ","source":"来源: Arvinjunの站点","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: {"chs_to_cht":"你已切换为繁体中文","cht_to_chs":"你已切换为简体中文","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#febcd5","bgDark":"#1f1f1f","position":"bottom-left"},
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo 进阶教程',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-07-19 14:09:58'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+        if (t === 'dark') activateDarkMode()
+        else if (t === 'light') activateLightMode()
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><link rel="stylesheet" href="/blog-hexo/css/custom.css"><meta name="generator" content="Hexo 7.2.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (true) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/blog-hexo/img/logo.webp" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/blog-hexo/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/blog-hexo/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/blog-hexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog-hexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog-hexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog-hexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog-hexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog-hexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog-hexo/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/blog-hexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog-hexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/blog-hexo/tools/"><i class="fa-fw fas fa-screwdriver-wrench"></i><span> 工具</span></a></div><div class="menus_item"><a class="site-page" href="/blog-hexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/blog-hexo/img/cover/default-cover.webp')"><nav id="nav"><span id="blog-info"><a href="/blog-hexo/" title="Arvinjunの站点"><span class="site-name">Arvinjunの站点</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/blog-hexo/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 目录</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog-hexo/archives/"><i class="fa-fw fas fa-archive"></i><span> 归档</span></a></li><li><a class="site-page child" href="/blog-hexo/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></li><li><a class="site-page child" href="/blog-hexo/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></li></ul></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 娱乐</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/blog-hexo/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/blog-hexo/gallery/"><i class="fa-fw fas fa-images"></i><span> 图库</span></a></li><li><a class="site-page child" href="/blog-hexo/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/blog-hexo/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/blog-hexo/tools/"><i class="fa-fw fas fa-screwdriver-wrench"></i><span> 工具</span></a></div><div class="menus_item"><a class="site-page" href="/blog-hexo/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Hexo 进阶教程</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-17T03:11:48.000Z" title="发表于 2024-07-17 11:11:48">2024-07-17</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-07-19T06:09:58.562Z" title="更新于 2024-07-19 14:09:58">2024-07-19</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.6k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>7分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Hexo 进阶教程"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="音乐">音乐</h2>
+<blockquote>
+<p>官方教程：<a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/507c070f/">Butterfly 添加全局吸底 Aplayer 教程</a></p>
+</blockquote>
+<h3 id="全局吸底-Aplayer">全局吸底 Aplayer</h3>
+<details class="toggle" style="border: 1px solid #e8fafe"><summary class="toggle-button" style="background-color: #e8fafe;color: #4b4948">预览效果</summary><div class="toggle-content"><p><img src="https://niezicheng.github.io/files/images/hexo/fix-aplayer.webp" alt="fix-aplayer.webp"></p>
+</div></details>
+<details class="toggle" style="border: 1px solid #fff8e8"><summary class="toggle-button" style="background-color: #fff8e8;color: #4b4948">实现步骤</summary><div class="toggle-content"><ol>
+<li>安装 <code>Aplayer</code> 插件 <a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a></li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-tag-aplayer --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>关闭 <code>asset_inject</code>，在项目根目录的 <code>_config.yml</code> 中添加配置如下：</li>
+</ol>
+<p>由于需要全局都插入 <code>aplayer</code> 和 <code>meting</code> 资源，为了防止插入重复的资源，需把 <code>asset_inject</code> 设为 <code>false</code>。</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># aplayer</span></span><br><span class="line"><span class="attr">aplayer:</span></span><br><span class="line">  <span class="attr">meting:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">asset_inject:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>在主题配置文件 <code>_config.butterfly.yml</code> 中开启 <code>Aplayer</code> 配置，如下所示：</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Inject the css and script (aplayer/meting)</span></span><br><span class="line"><span class="attr">aplayerInject:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">per_page:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li>插入 <code>Aplayer</code> 标签，如下所示：</li>
+</ol>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span></span></span><br><span class="line"><span class="tag">  <span class="attr">class</span>=<span class="string">&quot;aplayer no-destroy&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-id</span>=<span class="string">&quot;7427714271&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-server</span>=<span class="string">&quot;netease&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-type</span>=<span class="string">&quot;playlist&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-fixed</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-mini</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-listFolded</span>=<span class="string">&quot;false&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-order</span>=<span class="string">&quot;random&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-lrctype</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-preload</span>=<span class="string">&quot;none&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-autoplay</span>=<span class="string">&quot;true&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">data-theme</span>=<span class="string">&quot;#febcd5&quot;</span></span></span><br><span class="line"><span class="tag">  <span class="attr">muted</span></span></span><br><span class="line"><span class="tag">&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>参数详细说明请参考 <a href="https://github.com/MoePlayer/hexo-tag-aplayer?tab=readme-ov-file#meingjs-support-new-in-30">Aplayer 配置参数</a>。</p>
+</div></details>
+<h3 id="音乐页面">音乐页面</h3>
+<details class="toggle" style="border: 1px solid #e8fafe"><summary class="toggle-button" style="background-color: #e8fafe;color: #4b4948">预览效果</summary><div class="toggle-content"><p><img src="https://niezicheng.github.io/files/images/hexo/meting-page.webp" alt="meting-page.webp"></p>
+</div></details>
+<details class="toggle" style="border: 1px solid #fff8e8"><summary class="toggle-button" style="background-color: #fff8e8;color: #4b4948">实现步骤</summary><div class="toggle-content"><ol>
+<li>创建音乐页面，新建 <code>source/music/index.md</code> 文件，执行下面命令：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page music</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>菜单导航配置，修改主题配置文件 <code>_config.butterfly.yml</code>，添加音乐菜单导航配置，如下所示：</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Menu 目录</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">娱乐</span> <span class="string">||</span> <span class="attr">fa fa-heartbeat:</span></span><br><span class="line">    <span class="string">音乐:</span> <span class="string">/music/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-music</span></span><br></pre></td></tr></table></figure>
+<ol start="3">
+<li>音乐页面配置，修改 <code>source/music/index.md</code> 文件，内容如下：</li>
+</ol>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% meting &quot;697054881&quot; &quot;netease&quot; &quot;playlist&quot; &quot;theme:&quot;#febcd5&quot; %&#125;</span><br></pre></td></tr></table></figure>
+<p>更多用法请阅读 <a href="https://github.com/MoePlayer/hexo-tag-aplayer">hexo-tag-aplayer</a> 文档。</p>
+</div></details>
+<h2 id="图库">图库</h2>
+<details class="toggle" style="border: 1px solid #e8fafe"><summary class="toggle-button" style="background-color: #e8fafe;color: #4b4948">预览效果</summary><div class="toggle-content"><h3 id="GalleryGroup-图库">GalleryGroup 图库</h3>
+<p><img src="https://niezicheng.github.io/files/images/gallery/gallery-group.webp" alt="gallery-group.webp"></p>
+<h3 id="Gallery-相册">Gallery 相册</h3>
+<p><img src="https://niezicheng.github.io/files/images/gallery/gallery-wallpaper.webp" alt="gallery-wallpaper.webp"></p>
+</div></details>
+<details class="toggle" style="border: 1px solid #fff8e8"><summary class="toggle-button" style="background-color: #fff8e8;color: #4b4948">实现步骤</summary><div class="toggle-content"><h3 id="GalleryGroup-图库">GalleryGroup 图库</h3>
+<ol>
+<li>创建图库页面，新建 <code>source/gallery/index.md</code> 文件，执行下面命令：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new page gallery</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>菜单导航配置，修改主题配置文件 <code>_config.butterfly.yml</code>，添加音乐菜单导航配置，如下所示：</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Menu 目录</span></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">娱乐</span> <span class="string">||</span> <span class="attr">fa fa-heartbeat:</span></span><br><span class="line">    <span class="string">图库:</span> <span class="string">/gallery/</span> <span class="string">||</span> <span class="string">fas</span> <span class="string">fa-images</span></span><br></pre></td></tr></table></figure>
+<h4 id="用法描述">用法描述</h4>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line">&#123;% galleryGroup name description link img-url %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必填</th>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>是</td>
+<td>String</td>
+<td>图库名称</td>
+</tr>
+<tr>
+<td>description</td>
+<td>是</td>
+<td>String</td>
+<td>图库描述</td>
+</tr>
+<tr>
+<td>link</td>
+<td>是</td>
+<td>String</td>
+<td>图库地址链接</td>
+</tr>
+<tr>
+<td>img-url</td>
+<td>否</td>
+<td>String</td>
+<td>图库封面链接</td>
+</tr>
+</tbody>
+</table>
+<h4 id="内容展示">内容展示</h4>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="language-xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">&quot;gallery-group-main&quot;</span>&gt;</span></span></span><br><span class="line">&#123;% galleryGroup &#x27;Wallpaper&#x27; &#x27;壁纸资源&#x27; &#x27;/gallery/wallpaper&#x27; https://xxx/wallhaven-werdv6.webp %&#125;</span><br><span class="line">&#123;% galleryGroup &#x27;Second Dimension&#x27; &#x27;二次元&#x27; &#x27;/gallery/second-dimension&#x27; https://xxx/wallhaven-z81qyy.webp %&#125;</span><br><span class="line"><span class="language-xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h4 id="效果预览">效果预览</h4>
+<p><img src="https://niezicheng.github.io/files/images/gallery/gallery-group.webp" alt="gallery-group.webp"></p>
+<p>更多用法请阅读 <a target="_blank" rel="noopener" href="https://butterfly.js.org/posts/4aa8abbe/#Gallery%E7%9B%B8%E5%86%8A%E5%9C%96%E5%BA%AB">galleryGroup</a>。</p>
+<!-- endtab -->
+<h3 id="Gallery-相册">Gallery 相册</h3>
+<p>创建图库详情 <code>wallpaper</code> 页面，新建 <code>source/gallery/wallpaper/index.md</code> 文件，执行下面命令：</p>
+<div class="tabs" id="gallery"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="gallery-1">本地</button><button type="button" class="tab " data-href="gallery-2">远程</button></ul><div class="tab-contents"><div class="tab-item-content active" id="gallery-1"><h4 id="用法描述">用法描述</h4>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gallery [lazyload],[rowHeight],[limit] %&#125;</span><br></pre></td></tr></table></figure>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>是否必填</th>
+<th>类型</th>
+<th>默认值</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>lazyload</td>
+<td>否</td>
+<td>Boolean</td>
+<td>false</td>
+<td>点击按钮加载更多图片。</td>
+</tr>
+<tr>
+<td>rowHeight</td>
+<td>否</td>
+<td>Number</td>
+<td>220</td>
+<td>图片显示的高度，如果需要一行显示更多的图片，可设置更小的数字。</td>
+</tr>
+<tr>
+<td>limit</td>
+<td>否</td>
+<td>Number</td>
+<td>10</td>
+<td>每次加载多少张照片。</td>
+</tr>
+</tbody>
+</table>
+<h4 id="内容展示">内容展示</h4>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gallery %&#125;</span><br><span class="line">![<span class="string">wallhaven-werdv6.webp</span>](<span class="link">https://xxx/wallhaven-werdv6.webp</span>)</span><br><span class="line">![<span class="string">wallhaven-2fd962.webp</span>](<span class="link">https://xxx/wallhaven-2fd962.webp</span>)</span><br><span class="line">![<span class="string">wallhaven-6oqgk7.webp</span>](<span class="link">https://xxx/wallhaven-6oqgk7.webp</span>)</span><br><span class="line">![<span class="string">wallhaven-8o5922.webp</span>](<span class="link">https://xxx/wallhaven-8o5922.webp</span>)</span><br><span class="line">![<span class="string">wallhaven-9f1cd0.webp</span>](<span class="link">https://xxx/wallhaven-9f1cd0.webp</span>)</span><br><span class="line">![<span class="string">wallhaven-72yzje.webp</span>](<span class="link">https://xxx/wallhaven-72yzje.webp</span>)</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></div><div class="tab-item-content" id="gallery-2"><h4 id="用法描述">用法描述</h4>
+<div class="gallery-container" data-type="url" data-button="[lazyload]">
+      <div class="gallery-data">[link]</div>
+      <div class="gallery-items">
+      </div>
+    </div>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">| 参数      | 是否必填 | 类型    | 默认值 | 说明                                                           |</span><br><span class="line">| --------- | -------- | ------- | ------ | -------------------------------------------------------------- |</span><br><span class="line">| url       | 是       | String  | -      | 识别词。                                                       |</span><br><span class="line">| link      | 是       | String  | -      | 远程的 json 链接。                                             |</span><br><span class="line">| lazyload  | 否       | Boolean | false  | 点击按钮加载更多图片。                                         |</span><br><span class="line">| rowHeight | 否       | Number  | 220    | 图片显示的高度，如果需要一行显示更多的图片，可设置更小的数字。 |</span><br><span class="line">| limit     | 否       | Number  | 10     | 每次加载多少张照片。                                           |</span><br></pre></td></tr></table></figure>
+<p>远程 <code>json</code> 文件，内容格式如下：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">[</span></span><br><span class="line">  <span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;url&quot;</span><span class="punctuation">:</span> <span class="string">&quot;https://w.wallhaven.cc/full/we/wallhaven-werdv6.png&quot;</span><span class="punctuation">,</span> <span class="comment">// 图片链接, 必填</span></span><br><span class="line">    <span class="attr">&quot;alt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;IMG_0556.jpg&quot;</span><span class="punctuation">,</span> <span class="comment">// 图片描述, 可选</span></span><br><span class="line">    <span class="attr">&quot;title&quot;</span><span class="punctuation">:</span> <span class="string">&quot;这是title&quot;</span>， <span class="comment">// 图片标题, 可选</span></span><br><span class="line">  <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br></pre></td></tr></table></figure>
+<h4 id="内容展示">内容展示</h4>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&#123;% gallery url, https://xxx.com/xxx.json %&#125;</span><br><span class="line">&#123;% endgallery %&#125;</span><br></pre></td></tr></table></figure></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h4 id="效果预览-2">效果预览</h4>
+<p><img src="https://niezicheng.github.io/files/images/gallery/gallery-wallpaper.webp" alt="gallery-wallpaper.webp"></p>
+</div></details>
+<h2 id="卡通人物">卡通人物</h2>
+<details class="toggle" style="border: 1px solid #e8fafe"><summary class="toggle-button" style="background-color: #e8fafe;color: #4b4948">预览效果</summary><div class="toggle-content"><p><img src="https://niezicheng.github.io/files/images/hexo/live2d-shizuku.webp" alt="live2d-shizuku.webp"></p>
+</div></details>
+<details class="toggle" style="border: 1px solid #fff8e8"><summary class="toggle-button" style="background-color: #fff8e8;color: #4b4948">实现步骤</summary><div class="toggle-content"><div class="tabs" id="modal"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="modal-1">多模型（推荐）</button><button type="button" class="tab " data-href="modal-2">单模型</button></ul><div class="tab-contents"><div class="tab-item-content active" id="modal-1"><p>如果你只需要基本功能，可以直接将下面 <code>html</code> 插入到你的页面中即可，不需要安装插件。更多其它定制化功能请参考 <a href="https://github.com/stevenjoezhang/live2d-widget">live2d-widget</a></p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://fastly.jsdelivr.net/gh/stevenjoezhang/live2d-widget@latest/autoload.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure></div><div class="tab-item-content" id="modal-2"><ol>
+<li>安装 <code>live2d</code> 模型（看版娘）插件 <a href="https://github.com/EYHN/hexo-helper-live2d">hexo-helper-live2d</a>【很久不更新啦】，执行下面命令：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-helper-live2d --save</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>下载指定看板娘模型，这边以 <code>live2d-widget-model-shizuku</code> 模型为例，执行下面命令：</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install live2d-widget-model-shizuku --save</span><br></pre></td></tr></table></figure>
+<p>更多模型请参考 <a href="https://github.com/xiazeyu/live2d-widget-models">live2d-widget-models</a></p></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+</div></details>
+<h2 id="鼠标移动特效">鼠标移动特效</h2>
+<details class="toggle" style="border: 1px solid #fff8e8"><summary class="toggle-button" style="background-color: #fff8e8;color: #4b4948">实现步骤</summary><div class="toggle-content"><ol>
+<li>在项目根目录下 <code>source</code> 文件下新建 <code>js/star-canvas.js</code> 文件，内容如下：</li>
+</ol>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * 鼠标滑动生成星星特效</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> <span class="title function_">startCanvas</span> = (<span class="params"></span>) =&gt; &#123;</span><br><span class="line">  <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;load&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">var</span> canvas = <span class="variable language_">document</span>.<span class="title function_">querySelector</span>(<span class="string">&quot;#star-canvas&quot;</span>);</span><br><span class="line">    <span class="keyword">var</span> ctx = canvas.<span class="title function_">getContext</span>(<span class="string">&quot;2d&quot;</span>);</span><br><span class="line">    <span class="variable language_">window</span>.<span class="property">onresize</span> = resizeCanvas;</span><br><span class="line">    <span class="comment">// 设置画布大小</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">resizeCanvas</span>(<span class="params"></span>) &#123;</span><br><span class="line">      canvas.<span class="property">width</span> = <span class="variable language_">window</span>.<span class="property">innerWidth</span>;</span><br><span class="line">      canvas.<span class="property">height</span> = <span class="variable language_">window</span>.<span class="property">innerHeight</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="title function_">resizeCanvas</span>();</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 设置画布样式</span></span><br><span class="line">    canvas.<span class="property">style</span>.<span class="property">cssText</span> = <span class="string">`</span></span><br><span class="line"><span class="string">      position: fixed;</span></span><br><span class="line"><span class="string">      z-index: 1000;</span></span><br><span class="line"><span class="string">      pointer-events: none;</span></span><br><span class="line"><span class="string">      top: 0;</span></span><br><span class="line"><span class="string">      left: 0;</span></span><br><span class="line"><span class="string">    `</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">var</span> arr = [];</span><br><span class="line">    <span class="keyword">var</span> colours = [<span class="string">&quot;#ec4c8c&quot;</span>, <span class="string">&quot;#f47466&quot;</span>, <span class="string">&quot;#a4d8fa&quot;</span>, <span class="string">&quot;#ff9900&quot;</span>, <span class="string">&quot;#febcd5&quot;</span>];</span><br><span class="line">    <span class="comment">// 鼠标移动事件</span></span><br><span class="line">    <span class="variable language_">window</span>.<span class="title function_">addEventListener</span>(<span class="string">&quot;mousemove&quot;</span>, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">      arr.<span class="title function_">push</span>(&#123;</span><br><span class="line">        <span class="attr">x</span>: e.<span class="property">clientX</span>,</span><br><span class="line">        <span class="attr">y</span>: e.<span class="property">clientY</span>,</span><br><span class="line">        <span class="attr">r</span>: <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">0.5</span> + <span class="number">1.5</span>,</span><br><span class="line">        <span class="attr">td</span>: <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">4</span> - <span class="number">2</span>,</span><br><span class="line">        <span class="attr">dx</span>: <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">2</span> - <span class="number">1</span>,</span><br><span class="line">        <span class="attr">dy</span>: <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">1</span> + <span class="number">1</span>,</span><br><span class="line">        <span class="attr">rot</span>: <span class="title class_">Math</span>.<span class="title function_">random</span>() * <span class="number">90</span> + <span class="number">90</span>,</span><br><span class="line">        <span class="attr">color</span>: colours[<span class="title class_">Math</span>.<span class="title function_">floor</span>(<span class="title class_">Math</span>.<span class="title function_">random</span>() * colours.<span class="property">length</span>)],</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制星星</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">star</span>(<span class="params">x, y, r, l, rot</span>) &#123;</span><br><span class="line">      ctx.<span class="title function_">beginPath</span>();</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">        ctx.<span class="title function_">lineTo</span>(</span><br><span class="line">          <span class="title class_">Math</span>.<span class="title function_">cos</span>(((<span class="number">18</span> + i * <span class="number">72</span> - rot) * <span class="title class_">Math</span>.<span class="property">PI</span>) / <span class="number">180</span>) * r + x,</span><br><span class="line">          -<span class="title class_">Math</span>.<span class="title function_">sin</span>(((<span class="number">18</span> + i * <span class="number">72</span> - rot) * <span class="title class_">Math</span>.<span class="property">PI</span>) / <span class="number">180</span>) * r + y</span><br><span class="line">        );</span><br><span class="line">        ctx.<span class="title function_">lineTo</span>(</span><br><span class="line">          <span class="title class_">Math</span>.<span class="title function_">cos</span>(((<span class="number">54</span> + i * <span class="number">72</span> - rot) * <span class="title class_">Math</span>.<span class="property">PI</span>) / <span class="number">180</span>) * l + x,</span><br><span class="line">          -<span class="title class_">Math</span>.<span class="title function_">sin</span>(((<span class="number">54</span> + i * <span class="number">72</span> - rot) * <span class="title class_">Math</span>.<span class="property">PI</span>) / <span class="number">180</span>) * l + y</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">      ctx.<span class="title function_">closePath</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 绘制</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">draw</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> temp = arr[i];</span><br><span class="line">        <span class="title function_">star</span>(temp.<span class="property">x</span>, temp.<span class="property">y</span>, temp.<span class="property">r</span>, temp.<span class="property">r</span> * <span class="number">3</span>, temp.<span class="property">rot</span>);</span><br><span class="line">        ctx.<span class="property">fillStyle</span> = temp.<span class="property">color</span>;</span><br><span class="line">        ctx.<span class="property">strokeStyle</span> = temp.<span class="property">color</span>;</span><br><span class="line">        ctx.<span class="property">lineWidth</span> = <span class="number">0.1</span>;</span><br><span class="line">        ctx.<span class="property">lineJoin</span> = <span class="string">&quot;round&quot;</span>;</span><br><span class="line">        ctx.<span class="title function_">fill</span>();</span><br><span class="line">        ctx.<span class="title function_">stroke</span>();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 更新</span></span><br><span class="line">    <span class="keyword">function</span> <span class="title function_">update</span>(<span class="params"></span>) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; arr.<span class="property">length</span>; i++) &#123;</span><br><span class="line">        arr[i].<span class="property">x</span> += arr[i].<span class="property">dx</span>;</span><br><span class="line">        arr[i].<span class="property">y</span> += arr[i].<span class="property">dy</span>;</span><br><span class="line">        arr[i].<span class="property">rot</span> += arr[i].<span class="property">td</span>;</span><br><span class="line">        arr[i].<span class="property">r</span> -= <span class="number">0.015</span>;</span><br><span class="line">        <span class="keyword">if</span> (arr[i].<span class="property">r</span> &lt; <span class="number">0</span>) &#123;</span><br><span class="line">          arr.<span class="title function_">splice</span>(i, <span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 定时器</span></span><br><span class="line">    <span class="built_in">setInterval</span>(<span class="function">() =&gt;</span> &#123;</span><br><span class="line">      ctx.<span class="title function_">clearRect</span>(<span class="number">0</span>, <span class="number">0</span>, canvas.<span class="property">width</span>, canvas.<span class="property">height</span>);</span><br><span class="line">      <span class="title function_">draw</span>();</span><br><span class="line">      <span class="title function_">update</span>();</span><br><span class="line">    &#125;, <span class="number">20</span>);</span><br><span class="line">  &#125;);</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// 启动</span></span><br><span class="line"><span class="title function_">startCanvas</span>();</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>在主题配置文件 <code>_config.butterfly.yml</code> 中引入 <code>star-canvas.js</code> 文件，如下所示：</li>
+</ol>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">inject:</span></span><br><span class="line">  <span class="attr">head:</span></span><br><span class="line">    <span class="comment"># 自定义覆盖样式</span></span><br><span class="line">  <span class="attr">bottom:</span></span><br><span class="line">    <span class="comment"># 鼠标滑动星星特效</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;canvas</span> <span class="string">id=&quot;star-canvas&quot;&gt;&lt;/canvas&gt;</span></span><br><span class="line">    <span class="bullet">-</span> <span class="string">&lt;script</span> <span class="string">src=&quot;/blog-hexo/js/star-canvas.js&quot;&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+</div></details>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://github.com/niezicheng/blog-hexo">Arvinjun</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://github.com/niezicheng/blog-hexo/posts/b86e2546/">https://github.com/niezicheng/blog-hexo/posts/b86e2546/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://github.com/niezicheng/blog-hexo" target="_blank">Arvinjunの站点</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/blog-hexo/tags/%E6%95%99%E7%A8%8B/">教程</a><a class="post-meta__tags" href="/blog-hexo/tags/Hexo/">Hexo</a></div><div class="post_share"><div class="social-share" data-image="/blog-hexo/img/cover/default-cover.webp" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/blog-hexo/posts/a77c77c/" title="Hexo Twikoo 评论功能"><img class="cover" src="/blog-hexo/img/cover/default-cover.webp" onerror="onerror=null;src='/blog-hexo/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">Hexo Twikoo 评论功能</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/blog-hexo/posts/a77c77c/" title="Hexo Twikoo 评论功能"><img class="cover" src="/blog-hexo/img/cover/default-cover.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-12</div><div class="title">Hexo Twikoo 评论功能</div></div></a></div><div><a href="/blog-hexo/posts/380b088c/" title="Hexo 及 Butterfly 主题安装、部署"><img class="cover" src="/blog-hexo/img/cover/default-cover.webp" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-09</div><div class="title">Hexo 及 Butterfly 主题安装、部署</div></div></a></div></div></div><hr class="custom-hr"/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div id="twikoo-wrap"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/blog-hexo/img/logo.webp" onerror="this.onerror=null;this.src='/blog-hexo/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Arvinjun</div><div class="author-info__description">心中有光，何惧路长；志存高远，方能行远自迩</div></div><div class="card-info-data site-data is-center"><a href="/blog-hexo/archives/"><div class="headline">文章</div><div class="length-num">3</div></a><a href="/blog-hexo/tags/"><div class="headline">标签</div><div class="length-num">5</div></a><a href="/blog-hexo/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" href="https://github.com/niezicheng"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/niezicheng/blog-hexo" target="_blank" title="Github"><i class="fab fa-github" style="color: #febcd5;"></i></a><a class="social-icon" href="https://juejin.cn/user/2946346894759319/posts" target="_blank" title="Blog"><i class="fas fa-square-rss" style="color: #febcd5;"></i></a><a class="social-icon" href="https://www.yuque.com/niezicheng" target="_blank" title="YuQue"><i class="fas fa-crow" style="color: #febcd5;"></i></a><a class="social-icon" href="mailto:zichengnie1212@gmail.com" target="_blank" title="Email"><i class="fas fa-envelope" style="color: #febcd5;"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">👏👏 希望和各位站友共同进步！</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9F%B3%E4%B9%90"><span class="toc-number">1.</span> <span class="toc-text">音乐</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%90%B8%E5%BA%95-Aplayer"><span class="toc-number">1.1.</span> <span class="toc-text">全局吸底 Aplayer</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9F%B3%E4%B9%90%E9%A1%B5%E9%9D%A2"><span class="toc-number">1.2.</span> <span class="toc-text">音乐页面</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9B%BE%E5%BA%93"><span class="toc-number">2.</span> <span class="toc-text">图库</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GalleryGroup-%E5%9B%BE%E5%BA%93"><span class="toc-number">2.1.</span> <span class="toc-text">GalleryGroup 图库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gallery-%E7%9B%B8%E5%86%8C"><span class="toc-number">2.2.</span> <span class="toc-text">Gallery 相册</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#GalleryGroup-%E5%9B%BE%E5%BA%93"><span class="toc-number">2.3.</span> <span class="toc-text">GalleryGroup 图库</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.3.1.</span> <span class="toc-text">用法描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%B1%95%E7%A4%BA"><span class="toc-number">2.3.2.</span> <span class="toc-text">内容展示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88"><span class="toc-number">2.3.3.</span> <span class="toc-text">效果预览</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Gallery-%E7%9B%B8%E5%86%8C"><span class="toc-number">2.4.</span> <span class="toc-text">Gallery 相册</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.4.1.</span> <span class="toc-text">用法描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%B1%95%E7%A4%BA"><span class="toc-number">2.4.2.</span> <span class="toc-text">内容展示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%94%A8%E6%B3%95%E6%8F%8F%E8%BF%B0"><span class="toc-number">2.4.3.</span> <span class="toc-text">用法描述</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%B1%95%E7%A4%BA"><span class="toc-number">2.4.4.</span> <span class="toc-text">内容展示</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E9%A2%84%E8%A7%88-2"><span class="toc-number">2.4.5.</span> <span class="toc-text">效果预览</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8D%A1%E9%80%9A%E4%BA%BA%E7%89%A9"><span class="toc-number">3.</span> <span class="toc-text">卡通人物</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%BC%A0%E6%A0%87%E7%A7%BB%E5%8A%A8%E7%89%B9%E6%95%88"><span class="toc-number">4.</span> <span class="toc-text">鼠标移动特效</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/blog-hexo/posts/b86e2546/" title="Hexo 进阶教程"><img src="/blog-hexo/img/cover/default-cover.webp" onerror="this.onerror=null;this.src='/blog-hexo/img/404.jpg'" alt="Hexo 进阶教程"/></a><div class="content"><a class="title" href="/blog-hexo/posts/b86e2546/" title="Hexo 进阶教程">Hexo 进阶教程</a><time datetime="2024-07-17T03:11:48.000Z" title="发表于 2024-07-17 11:11:48">2024-07-17</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog-hexo/posts/a77c77c/" title="Hexo Twikoo 评论功能"><img src="/blog-hexo/img/cover/default-cover.webp" onerror="this.onerror=null;this.src='/blog-hexo/img/404.jpg'" alt="Hexo Twikoo 评论功能"/></a><div class="content"><a class="title" href="/blog-hexo/posts/a77c77c/" title="Hexo Twikoo 评论功能">Hexo Twikoo 评论功能</a><time datetime="2024-07-12T03:10:27.000Z" title="发表于 2024-07-12 11:10:27">2024-07-12</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/blog-hexo/posts/380b088c/" title="Hexo 及 Butterfly 主题安装、部署"><img src="/blog-hexo/img/cover/default-cover.webp" onerror="this.onerror=null;this.src='/blog-hexo/img/404.jpg'" alt="Hexo 及 Butterfly 主题安装、部署"/></a><div class="content"><a class="title" href="/blog-hexo/posts/380b088c/" title="Hexo 及 Butterfly 主题安装、部署">Hexo 及 Butterfly 主题安装、部署</a><time datetime="2024-07-09T03:06:00.000Z" title="发表于 2024-07-09 11:06:00">2024-07-09</time></div></div></div></div></div></div></main><footer id="footer" style="background-image: url('/blog-hexo/img/cover/default-cover.webp')"><div id="footer-wrap"><div class="copyright">&copy;2024  <i id="heartbeat" class="fa fas fa-heartbeat"></i> Arvinjun</div><div class="framework-info"><span>网站 </span><a href="https://github.com/niezicheng/blog-hexo">Github</a><span class="footer-separator">|</span><span>主题 </span><a href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/blog-hexo/js/utils.js?v=4.13.0"></script><script src="/blog-hexo/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@5.2.0/instantpage.min.js" type="module"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar@0.1.16/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.autoSpacingPage()
+  else {
+    getScript('https://cdn.jsdelivr.net/npm/pangu@4.0.7/dist/browser/pangu.min.js')
+      .then(() => {
+        pangu.autoSpacingPage()
+      })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
+  const getCount = () => {
+    const countELement = document.getElementById('twikoo-count')
+    if(!countELement) return
+    twikoo.getCommentsCount({
+      envId: 'https://my-twikoo-psi-lac.vercel.app/',
+      region: '',
+      urls: [window.location.pathname],
+      includeReply: false
+    }).then(res => {
+      countELement.textContent = res[0].count
+    }).catch(err => {
+      console.error(err)
+    })
+  }
+
+  const init = () => {
+    twikoo.init(Object.assign({
+      el: '#twikoo-wrap',
+      envId: 'https://my-twikoo-psi-lac.vercel.app/',
+      region: '',
+      onCommentLoaded: () => {
+        btf.loadLightbox(document.querySelectorAll('#twikoo .tk-content img:not(.tk-owo-emotion)'))
+      }
+    }, null))
+
+    GLOBAL_CONFIG_SITE.isPost && getCount()
+  }
+
+  const loadTwikoo = () => {
+    if (typeof twikoo === 'object') setTimeout(init,0)
+    else getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(init)
+  }
+
+  if ('Twikoo' === 'Twikoo' || !true) {
+    if (true) btf.loadComment(document.getElementById('twikoo-wrap'), loadTwikoo)
+    else loadTwikoo()
+  } else {
+    window.loadOtherComment = loadTwikoo
+  }
+})()</script></div><script>window.addEventListener('load', () => {
+  const changeContent = (content) => {
+    if (content === '') return content
+
+    content = content.replace(/<img.*?src="(.*?)"?[^\>]+>/ig, '[图片]') // replace image link
+    content = content.replace(/<a[^>]+?href=["']?([^"']+)["']?[^>]*>([^<]+)<\/a>/gi, '[链接]') // replace url
+    content = content.replace(/<pre><code>.*?<\/pre>/gi, '[代码]') // replace code
+    content = content.replace(/<[^>]+>/g,"") // remove html tag
+
+    if (content.length > 150) {
+      content = content.substring(0,150) + '...'
+    }
+    return content
+  }
+
+  const getComment = () => {
+    const runTwikoo = () => {
+      twikoo.getRecentComments({
+        envId: 'https://my-twikoo-psi-lac.vercel.app/',
+        region: '',
+        pageSize: 6,
+        includeReply: true
+      }).then(function (res) {
+        const twikooArray = res.map(e => {
+          return {
+            'content': changeContent(e.comment),
+            'avatar': e.avatar,
+            'nick': e.nick,
+            'url': e.url + '#' + e.id,
+            'date': new Date(e.created).toISOString()
+          }
+        })
+
+        saveToLocal.set('twikoo-newest-comments', JSON.stringify(twikooArray), 10/(60*24))
+        generateHtml(twikooArray)
+      }).catch(function (err) {
+        const $dom = document.querySelector('#card-newest-comments .aside-list')
+        $dom.textContent= "无法获取评论，请确认相关配置是否正确"
+      })
+    }
+
+    if (typeof twikoo === 'object') {
+      runTwikoo()
+    } else {
+      getScript('https://cdn.jsdelivr.net/npm/twikoo@1.6.31/dist/twikoo.all.min.js').then(runTwikoo)
+    }
+  }
+
+  const generateHtml = array => {
+    let result = ''
+
+    if (array.length) {
+      for (let i = 0; i < array.length; i++) {
+        result += '<div class=\'aside-list-item\'>'
+
+        if (true) {
+          const name = 'src'
+          result += `<a href='${array[i].url}' class='thumbnail'><img ${name}='${array[i].avatar}' alt='${array[i].nick}'></a>`
+        }
+        
+        result += `<div class='content'>
+        <a class='comment' href='${array[i].url}' title='${array[i].content}'>${array[i].content}</a>
+        <div class='name'><span>${array[i].nick} / </span><time datetime="${array[i].date}">${btf.diffDate(array[i].date, true)}</time></div>
+        </div></div>`
+      }
+    } else {
+      result += '没有评论'
+    }
+
+    let $dom = document.querySelector('#card-newest-comments .aside-list')
+    $dom && ($dom.innerHTML= result)
+    window.lazyLoadInstance && window.lazyLoadInstance.update()
+    window.pjax && window.pjax.refresh($dom)
+  }
+
+  const newestCommentInit = () => {
+    if (document.querySelector('#card-newest-comments .aside-list')) {
+      const data = saveToLocal.get('twikoo-newest-comments')
+      if (data) {
+        generateHtml(JSON.parse(data))
+      } else {
+        getComment()
+      }
+    }
+  }
+
+  newestCommentInit()
+  document.addEventListener('pjax:complete', newestCommentInit)
+})</script><canvas id="star-canvas"></canvas><script src="/blog-hexo/js/star-canvas.js"></script><div class="aplayer no-destroy" data-id="7427714271" data-server="netease" data-type="playlist" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-lrctype="1" data-preload="none" data-autoplay="true" muted data-theme="#febcd5"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="false"></script><script id="click-heart" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/click-heart.min.js" async="async" mobile="false"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/aplayer@1.10.1/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/metingjs/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax@0.2.8/pjax.min.js"></script><script>let pjaxSelectors = ["head > title","#config-diff","#body-wrap","#rightside-config-hide","#rightside-config-show",".js-pjax"]
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: false,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:send', function () {
+
+  // removeEventListener
+  btf.removeGlobalFnEvent('pjax')
+  btf.removeGlobalFnEvent('themeChange')
+
+  document.getElementById('rightside').classList.remove('rightside-show')
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  //reset readmode
+  const $bodyClassList = document.body.classList
+  $bodyClassList.contains('read-mode') && $bodyClassList.remove('read-mode')
+
+  typeof disqusjs === 'object' && disqusjs.destroy()
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  document.querySelectorAll('script[data-pjax]').forEach(item => {
+    const newScript = document.createElement('script')
+    const content = item.text || item.textContent || item.innerHTML || ""
+    Array.from(item.attributes).forEach(attr => newScript.setAttribute(attr.name, attr.value))
+    newScript.appendChild(document.createTextNode(content))
+    item.parentNode.replaceChild(newScript, item)
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof panguInit === 'function' && panguInit()
+
+  // google analytics
+  typeof gtag === 'function' && gtag('config', '', {'page_path': window.location.pathname});
+
+  // baidu analytics
+  typeof _hmt === 'object' && _hmt.push(['_trackPageview',window.location.pathname]);
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+})
+
+document.addEventListener('pjax:error', e => {
+  if (e.request.status === 404) {
+    pjax.loadUrl('/blog-hexo/404')
+  }
+})</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/blog-hexo/js/search/local-search.js?v=4.13.0"></script></div></div><script src="/blog-hexo/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"tagMode":false,"debug":false,"model":{"jsonPath":"/blog-hexo/live2dw/assets/shizuku.model.json"},"display":{"position":"right","width":150,"height":300,"hOffset":20,"vOffset":-20},"mobile":{"show":false},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/"});</script></body></html>
