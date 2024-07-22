@@ -1,5 +1,5 @@
 ---
-title: Hexo 进阶教程（三）
+title: Hexo Butterfly 功能进阶教程(三)
 abbrlink: b86e2546
 date: 2024-07-22 11:11:48
 tags:
