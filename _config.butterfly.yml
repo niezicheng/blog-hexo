@@ -94,6 +94,9 @@ cover:
   default_cover:
     # - https://i.loli.net/2020/05/01/gkihqEjXxJ5UZ1C.jpg
     - /img/cover/default-cover.webp
+    - /img/cover/one.webp
+    - /img/cover/two.webp
+    - /img/cover/three.webp
 
 # Replace Broken Images (替换无法显示的图片)
 error_img:
@@ -197,7 +200,7 @@ related_post:
 # 1: The 'next post' will link to old post
 # 2: The 'next post' will link to new post
 # false: disable pagination
-post_pagination: 1
+post_pagination: 2
 
 # Displays outdated notice for a post (文章過期提醒)
 noticeOutdate:
@@ -334,9 +337,9 @@ darkmode:
 # show scroll percent in scroll-to-top button
 rightside_scroll_percent: true
 
-# Don't modify the following settings unless you know how they work (非必要請不要修改 )
+# Don't modify the following settings unless you know how they work (非必要请不要修改 )
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
-# Don't repeat 不要重複
+# Don't repeat 不要重复
 rightside_item_order:
   enable: false
   hide: # readmode,translate,darkmode,hideAside
