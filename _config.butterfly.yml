@@ -18,6 +18,8 @@ menu:
     音乐: /music/ || fas fa-music
     图库: /gallery/ || fas fa-images
     电影: /movies/ || fas fa-video
+  学习之路 || fa-brands fa-studiovinari:
+    前端: /front-end/ || fa-solid fa-book-open-reader
   友链: /link/ || fas fa-link
   工具: /tools/ || fas fa-screwdriver-wrench
   关于: /about/ || fas fa-heart
@@ -670,9 +672,9 @@ enter_transitions: true
 # Typewriter Effect (打字效果)
 # https://github.com/disjukr/activate-power-mode
 activate_power_mode:
-  enable: false # 开启打字效果在使用本地搜索时会出现页面抖动问题
+  enable: true # 开启打字效果在使用本地搜索时会出现页面抖动问题
   colorful: true # open particle animation (冒光特效)
-  shake: true #  open shake (抖動特效)
+  shake: false #  open shake (抖動特效)
   mobile: false
 
 # Background effects (背景特效)
