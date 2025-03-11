@@ -14,12 +14,12 @@ menu:
     归档: /archives/ || fas fa-archive
     标签: /tags/ || fas fa-tags
     分类: /categories/ || fas fa-folder-open
+  学习之路 || fa-brands fa-studiovinari:
+    前端: /front-end/ || fa-solid fa-book-open-reader
   娱乐 || fa fa-heartbeat:
     音乐: /music/ || fas fa-music
     图库: /gallery/ || fas fa-images
     电影: /movies/ || fas fa-video
-  学习之路 || fa-brands fa-studiovinari:
-    前端: /front-end/ || fa-solid fa-book-open-reader
   友链: /link/ || fas fa-link
   工具: /tools/ || fas fa-screwdriver-wrench
   关于: /about/ || fas fa-heart
