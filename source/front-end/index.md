@@ -13,6 +13,7 @@ date: 2024-07-30 11:31:49
 
 ## 知识导航
 
+- [频率高的前端面试题](./frequent-interview-questions/)
 - [HTML & CSS](./html-css/)
 - [JavaScript](./javascript/)
 - [浏览器](./browser/)
@@ -22,3 +23,8 @@ date: 2024-07-30 11:31:49
 - [项目性能优化](./performance-optimization/)
 - [数据结构 & 算法](./algorithm/)
 - [源码分析](./source-code-analysis/)
+
+## 推荐网站
+
+- [剑指前端 Offer](https://febook.hzfe.org/awesome-interview/)
+- [overreacted](https://overreacted.io/)
