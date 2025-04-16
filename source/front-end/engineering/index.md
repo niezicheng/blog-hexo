@@ -24,3 +24,7 @@ date: 2024-07-30 11:31:49
 ## 规范
 
 - [Git Commit 规范及 CHANGELOG 定制生成](https://juejin.cn/post/7033385543094239245)
+
+## TypeScript
+
+- [🌝 重学 TS](https://juejin.cn/post/7211358106629750841)

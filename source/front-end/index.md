@@ -1,6 +1,5 @@
 ---
 title: 前端进阶之路
-date: 2024-07-30 11:31:49
 ---
 
 ## 前端基础
@@ -23,8 +22,11 @@ date: 2024-07-30 11:31:49
 - [项目性能优化](./performance-optimization/)
 - [数据结构 & 算法](./algorithm/)
 - [源码分析](./source-code-analysis/)
+- [前端场景问题](./scene-question/)
 
 ## 推荐网站
 
 - [剑指前端 Offer](https://febook.hzfe.org/awesome-interview/)
+- [大厂面试每日一题](https://q.shanyue.tech/fe)
 - [overreacted](https://overreacted.io/)
+- [面试导航](https://www.codecrack.cn/zh)
